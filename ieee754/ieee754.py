@@ -16,9 +16,6 @@ def fractToBin(fract):
 
     return fractStr
 
-def binToFloat(binary):
-    return struct.unpack('!f',struct.pack('!I', int(binary, 2)))[0]
-
 inVal = "34.5" # input('Enter a float: ')
 inFloat = float(inVal)
 print(inFloat)
@@ -27,10 +24,6 @@ intPart = int(inFloat)
 print(intPart)
 
 fracPart = inFloat - intPart;
-
-# fracPart = 0
-# if "." in inVal:
-#     fracPart = int(str(inFloat).split('.')[-1])
 
 print(fracPart)
 
