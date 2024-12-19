@@ -16,16 +16,14 @@ def fractToBin(fract):
 
     return fractStr
 
-inVal = "34.5" # input('Enter a float: ')
+inVal = "-1039" # input('Enter a float: ')
 inFloat = float(inVal)
 print(inFloat)
 
-intPart = int(inFloat)
+intPart = abs(int(inFloat))
 print(intPart)
 
 fracPart = inFloat - intPart;
-
-print(fracPart)
 
 intStr = f'{intPart:b}'
 # Integer part in binary (string)
@@ -36,17 +34,14 @@ fractStr = fractToBin(fracPart)
 
 print("Binary fractional part: " + fractStr)
 
-pointPos = len(intStr)
-print("Decimal point position: " + str(pointPos))
 
 fullBin =  intStr + fractStr
 onePos = fullBin.find('1')
-print("One place: " + str(onePos))
-
-if pointPos > onePos:
-    pointPos -= 1
+pointPos = len(intStr) - onePos - 1
+print(f"One place: {onePos}, shift: {pointPos}")
 
 exponent = 15 + pointPos;
+print(f"Exponent: {exponent}")
 
 signStr = '0'
 exponentStr = f'{exponent:05b}'  # Limit to 5 bits
