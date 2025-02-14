@@ -83,7 +83,7 @@ def decimal_to_signed_binary(decimal_number, int_size, total_size):
 
 # Exemple d'utilisation
 try:
-    decimal_number = 4.75  # Nombre décimal à convertir
+    decimal_number = -3.7  # Nombre décimal à convertir
     int_size = 4            # Taille de la partie entière
     total_size = 8          # Taille totale du registre
 
